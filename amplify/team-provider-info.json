@@ -1,0 +1,15 @@
+{
+    "master": {
+        "awscloudformation": {
+            "AuthRoleName": "amplify-reason-playground-master-114935-authRole",
+            "UnauthRoleArn": "arn:aws:iam::826140820180:role/amplify-reason-playground-master-114935-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::826140820180:role/amplify-reason-playground-master-114935-authRole",
+            "Region": "eu-west-1",
+            "DeploymentBucketName": "amplify-reason-playground-master-114935-deployment",
+            "UnauthRoleName": "amplify-reason-playground-master-114935-unauthRole",
+            "StackName": "amplify-reason-playground-master-114935",
+            "StackId": "arn:aws:cloudformation:eu-west-1:826140820180:stack/amplify-reason-playground-master-114935/1c047bc0-3c44-11ea-b0cf-069d65c3affc",
+            "AmplifyAppId": "d130f50caa8k9a"
+        }
+    }
+}

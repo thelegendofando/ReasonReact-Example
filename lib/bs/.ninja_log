@@ -1,0 +1,13 @@
+# ninja log v5
+# start_time end_time mtime command hash
+1	24	6013107530610633	ReasonPlayground.cmi	123ee3880446cdaa
+6	57	6013107530999907	src/index.reast	f5b913e80b1e9153
+58	69	6013107531099305	src/index.d	e9cfb8a025691bb2
+8	163	6013107531069400	src/AppWrapper.reast	d06e6b4260cd4e49
+163	173	6013107532166480	src/AppWrapper.d	d92071964715e841
+174	208	6013107532515576	src/AppWrapper-ReasonPlayground.cmj	e9748d11bcb5ea54
+174	208	6013107532515576	src/AppWrapper-ReasonPlayground.cmi	e9748d11bcb5ea54
+174	208	6013107532515576	C:/dev/reason-playground/src/AppWrapper.js	e9748d11bcb5ea54
+209	252	6013107532944698	src/index-ReasonPlayground.cmj	6b277d4767e09372
+209	252	6013107532944698	src/index-ReasonPlayground.cmi	6b277d4767e09372
+209	252	6013107532944698	C:/dev/reason-playground/src/index.js	6b277d4767e09372

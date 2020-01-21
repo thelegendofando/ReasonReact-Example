@@ -1,0 +1,1 @@
+{ "dirs" : [ "src" ] , "pkgs" : [ [ "bs-platform" , "C:\\dev\\reason-playground\\node_modules\\bs-platform" ] , [ "reason-react" , "C:\\dev\\reason-playground\\node_modules\\reason-react" ] ] , "generated" : [] }

@@ -1,0 +1,37 @@
+g_std_incl = "C:\dev\reason-playground\node_modules\bs-platform\lib\ocaml"
+g_pkg_flg = -bs-package-name reason-playground -bs-ns ReasonPlayground
+src_root_dir = C:\dev\reason-playground
+bsc = "C:\dev\reason-playground\node_modules\bs-platform\lib\bsc.exe"
+bsdep = "C:\dev\reason-playground\node_modules\bs-platform\lib\bsb_helper.exe"
+warnings = -w -30-40+6+7+27+32..39+44+45+101
+bsc_flags = -bs-super-errors
+ppx_flags = 
+g_dpkg_incls = 
+g_ns = -bs-ns ReasonPlayground
+bsb_dir_group = 0
+g_lib_incls = -I . -I src -I "C:\dev\reason-playground\node_modules\reason-react\lib\ocaml"
+rule build_ast_from_re
+  command = $bsc  $warnings -color always -bs-jsx 3 $bsc_flags -o $out -bs-syntax-only -bs-binary-ast $in
+  description = [34mBuilding[39m [2m${out}[22m
+build  src\index.reast : build_ast_from_re $src_root_dir\src\index.re
+rule build_deps
+  command = $bsdep -hash 221cb32e3ee513038a2096d50f32149d $g_ns -g $bsb_dir_group $in
+  restat = 1
+  description = [34mBuilding[39m [2m${out}[22m
+build  src\index.d : build_deps src\index.reast
+rule ml_cmj_cmi
+  command = $bsc -nostdlib $g_pkg_flg -color always $g_lib_incls -I $g_std_incl $warnings $bsc_flags -o $out $in
+  dyndep = $in_e.d
+  restat = 1
+  description = [34mBuilding[39m [2m${out}[22m
+build  src\index-ReasonPlayground.cmj |  src\index-ReasonPlayground.cmi $src_root_dir\src\index.js : ml_cmj_cmi src\index.reast ||  src\index.d
+  g_pkg_flg = $g_pkg_flg  -bs-package-output es6:src
+build  src\AppWrapper.reast : build_ast_from_re $src_root_dir\src\AppWrapper.re
+build  src\AppWrapper.d : build_deps src\AppWrapper.reast
+build  src\AppWrapper-ReasonPlayground.cmj |  src\AppWrapper-ReasonPlayground.cmi $src_root_dir\src\AppWrapper.js : ml_cmj_cmi src\AppWrapper.reast ||  src\AppWrapper.d
+  g_pkg_flg = $g_pkg_flg  -bs-package-output es6:src
+rule build_package
+  command = $bsc -w -49 -color always -no-alias-deps  $in
+  restat = 1
+  description = [34mBuilding[39m [2m${out}[22m
+build  ReasonPlayground.cmi : build_package ReasonPlayground.mlmap
