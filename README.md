@@ -2,7 +2,7 @@
 
 This is an example to show [Reason-React](https://reasonml.github.io/reason-react/) hosted with AWS Amplify.
 
-This is just the normal `create-react-app` template, but wrapped in Reason at the very top level. (I might update it to all be Reason...).
+This is just the normal `create-react-app` template, but rewritten in reason.
 
 `.re` files are converted to `.js` files via `bsb make-world` and then packaged into the `build` folder using `react-scripts build`.
 

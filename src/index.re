@@ -1,1 +1,1 @@
-ReactDOMRe.renderToElementWithId(<AppWrapper />, "root");
+ReactDOMRe.renderToElementWithId(<App />, "root");
